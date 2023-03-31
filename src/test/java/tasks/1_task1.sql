@@ -1,0 +1,24 @@
+select first_name, last_name, salary from employees;
+select count(*) from employees where salary<5000;
+select count(*) from employees where salary<7000 and salary>6000;
+select distinct region_id   from countries;
+select salary from employees where LAST_NAME = 'Grant' and FIRST_NAME = 'Douglas';
+select max(salary) from EMPLOYEES ;
+select * from EMPLOYEES where SALARY = (select max(salary) from employees);
+select max(salary) from employees where SALARY < (select max(salary) from EMPLOYEES );
+select * from EMPLOYEES where SALARY=(select max(salary) from employees where SALARY < (select max(salary) from EMPLOYEES));
+select min(salary) from EMPLOYEES ;
+select * from employees where SALARY = (select min(salary) from EMPLOYEES );
+select min(salary) from employees where SALARY > ( select min(salary) from employees);
+select * from employees where SALARY = (select min(salary) from employees where SALARY > ( select min(salary) from employees));
+select avg(salary) from employees;
+select * from employees where SALARY > (select avg(salary) from employees);
+select * from employees where SALARY < (select avg(salary) from employees);
+select  count(*) from DEPARTMENTS ;
+SELECT * FROM JOB_HISTORY ORDER BY START_DATE ASC ;
+SELECT * FROM JOB_HISTORY ORDER BY START_DATE DESC ;
+SELECT * FROM EMPLOYEES WHERE FIRST_NAME like ('A%');
+SELECT * FROM EMPLOYEES WHERE JOB_ID like ('%IT%');
+SELECT * FROM EMPLOYEES WHERE DEPARTMENT_ID in (50,80,100);
+
+select JOB_ID, avg(SALARY) as "average salary" from EMPLOYEES group by job_id having JOB_ID IN ('it_prog', 'sa_rep', 'fi_account', 'ad_vp');
