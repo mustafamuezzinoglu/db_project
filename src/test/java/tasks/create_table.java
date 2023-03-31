@@ -5,9 +5,10 @@ public class create_table {
 
 
 
-        System.out.println("is there any conflict");
+        System.out.println("my conflict");
+        
+        System.out.println("my conflict");
 
-
-
-    }
+        
+}
 }
