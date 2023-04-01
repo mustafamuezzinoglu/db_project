@@ -10,5 +10,5 @@ select min(salary) from (select distinct salary from employees order by salary d
 --find the 3rd minimum salary from the employees table (do not include duplicates)
 select max(salary) from (select distinct salary from employees order by salary asc) where rownum < 4;
 select min (salary) from EMPLOYEES where salary > (select min (salary) from employees where salary > (select min(salary) from employees));
---find the 10th maximum salary from the employees table (do not include duplicates)
+--find the 10th maximum salary from the employees table (do not include duplicates)git
 select max(salary) from (select distinct salary from employees order by salary asc) where rownum < 11;
